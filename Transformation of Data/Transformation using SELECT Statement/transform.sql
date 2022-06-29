@@ -39,7 +39,7 @@ COPY INTO OUR_FIRST_DB.PUBLIC.ORDERS_EX_WITH_FLAG
 SELECT * FROM "OUR_FIRST_DB"."PUBLIC"."ORDERS_EX_WITH_FLAG";
 
 
-// Example 3 - Table
+-- Example 3 - Table
 
 CREATE OR REPLACE TABLE OUR_FIRST_DB.PUBLIC.ORDERS_EX_TRANSFORM (
     ORDER_ID VARCHAR(30),
@@ -49,7 +49,7 @@ CREATE OR REPLACE TABLE OUR_FIRST_DB.PUBLIC.ORDERS_EX_TRANSFORM (
 );
 
 
-// Example 3 - Copy Command using a SQL function (subset of functions available)
+-- Example 3 - Copy Command using a SQL function (subset of functions available)
 
 COPY INTO OUR_FIRST_DB.PUBLIC.ORDERS_EX_TRANSFORM
     FROM (select 
@@ -64,7 +64,7 @@ COPY INTO OUR_FIRST_DB.PUBLIC.ORDERS_EX_TRANSFORM
 
 SELECT * FROM OUR_FIRST_DB.PUBLIC.ORDERS_EX_TRANSFORM;
 
-//Example 4 - Using subset of columns
+-- Example 4 - Using subset of columns
 
 COPY INTO OUR_FIRST_DB.PUBLIC.ORDERS_EX (ORDER_ID,PROFIT)
     FROM (select 
@@ -74,7 +74,7 @@ COPY INTO OUR_FIRST_DB.PUBLIC.ORDERS_EX (ORDER_ID,PROFIT)
     file_format= (type = csv field_delimiter=',' skip_header=1)
     files=('OrderDetails.csv');
 
-//Example 5 - Table Auto increment
+-- Example 5 - Table Auto increment
 
 CREATE OR REPLACE TABLE OUR_FIRST_DB.PUBLIC.ORDERS_EX_AUTO (
     ORDER_ID number autoincrement start 1 increment 1,
@@ -83,7 +83,7 @@ CREATE OR REPLACE TABLE OUR_FIRST_DB.PUBLIC.ORDERS_EX_AUTO (
     PROFITABLE_FLAG VARCHAR(30)
 );
 
-//Example 5 - Auto increment ID
+-- Example 5 - Auto increment ID
 
 COPY INTO OUR_FIRST_DB.PUBLIC.ORDERS_EX_AUTO (PROFIT,AMOUNT)
     FROM (select 
