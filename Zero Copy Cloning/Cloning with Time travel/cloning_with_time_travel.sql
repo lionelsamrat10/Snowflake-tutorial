@@ -68,6 +68,7 @@ SET JOB = 'Snowflake Analyst'
 
 // Using time travel: Method 2 - before Query
 SELECT * FROM OUR_FIRST_DB.public.time_travel_clone before (statement => '01a566f5-0004-2569-0016-360700010a86')
+    -- Inside the statement, we are passing the Query ID
 
 CREATE OR REPLACE TABLE OUR_FIRST_DB.PUBLIC.time_travel_clone_of_clone
 CLONE OUR_FIRST_DB.public.time_travel_clone before (statement => '01a566f5-0004-2569-0016-360700010a86')
